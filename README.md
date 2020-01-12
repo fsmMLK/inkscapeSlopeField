@@ -43,13 +43,12 @@ inkscape/extensions/
 
 Many of the methods implemented in inkscapeMadeEasy project use LaTeX to generate text. To this end I decided to employ the excellent extension **textext** from Pauli Virtanen  <https://pav.iki.fi/software/textext/>. 
 
-LaTeX support via textext extension requires LaTeX typesetting system in your computer (it's free and awesome
-! =] ). This might be a problem for non-Linux systems.
+LaTeX support via textext extension requires LaTeX typesetting system in your computer (it's free and awesome! =] ).
 
-Since many people don't use LaTeX and/or don't have it installed, inkscapeMadeEasy's LaTeX support is now optional.
-**By default, LaTeX support is ENABLED.**
+Since many people don't use LaTeX and/or don't have it installed, inkscapeMadeEasy's LaTeX support is now optional. **By default, LaTeX support is ENABLED.**
 
 Please refer to <https://fsmmlk.github.io/inkscapeMadeEasy/#installation-and-requirements> on how to easily disable LaTeX support.
+
 
 # Usage
 
