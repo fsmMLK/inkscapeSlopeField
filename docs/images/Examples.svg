@@ -32,7 +32,7 @@
      showgrid="false"
      inkscape:snap-text-baseline="true"
      inkscape:zoom="4.0305288"
-     inkscape:cx="-55.423151"
+     inkscape:cx="-98.593665"
      inkscape:cy="579.37289"
      inkscape:window-x="0"
      inkscape:window-y="0"
@@ -51,7 +51,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -10572,7 +10572,7 @@
        style="font-size:2.66666675px;line-height:1"
        y="607.51965"
        x="-67.346626"
-       sodipodi:role="line">obs: this extension does not compute solution of de ODE.</tspan></text>
+       sodipodi:role="line">obs: this extension does not compute solution of the ODE.</tspan></text>
   <g
      id="g34728"
      transform="translate(-1.7089846e-8,-6.9999997)">

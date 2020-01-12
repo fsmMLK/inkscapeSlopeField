@@ -72,7 +72,7 @@ Here you specify the slope function and set both independent and dependent varia
 The slope equation `f(x,y)` can be found isolating dy/dx in the ODE like the example below. The slope equation is, in
  general, a function of both `x` and `y`. Some cases might be independent of  `x` or `y` or both (constant slope).
 
-<img src="docs/images/slopeEqn.png" width="250px"/>
+<img src="docs/images/slopeEqn.png" width="150px"/>
 
 > Tip: This extension imports all method from 'math' module from python. Therefore you don have to specify the module name math.<some_method>.
 
