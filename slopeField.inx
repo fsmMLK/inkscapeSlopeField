@@ -17,7 +17,7 @@
             <param name="xMin"    type="float"   min="-100000"  precision="3"  max="100000"    _gui-text="x min:">0</param>
             <param name="xMax"    type="float"   min="-100000"  precision="3"  max="100000"    _gui-text="x max:">0</param>
 
-            <param name="desc1" type="description" appearance="header">X range</param>
+            <param name="desc1" type="description" appearance="header">Y range</param>
             <param name="yMin"    type="float"   min="-100000"  precision="3"  max="100000"    _gui-text="y min (linear axis only):">0</param>
             <param name="yMax"    type="float"   min="-100000"  precision="3"  max="100000"    _gui-text="y max (linear axis only):">0</param>
 
