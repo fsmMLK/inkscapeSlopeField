@@ -1,5 +1,6 @@
-# inkscapeSlopeField
- Extension to create slope fields of first order ordinary differential equations (ODEs)
+# slopeField
+
+This extension will assist you creating slope fields of first order ordinary differential equations (ODEs) in [Inkscape](https://inkscape.org/).
 
 <img src="docs/images/Examples.png" width="900px"/>
 
@@ -8,62 +9,117 @@
 The main features are
 
  - generate the slope field plot of a first order ODE
- - optional grid lines in X and Y directions
- - adjustable tick mark intervals and sizes
- - LaTeX support
+ - Optional grid lines in X and Y directions
+ - Adjustable tick mark intervals and sizes
+ - Optional LaTeX support
  - adjustable density of segments
+
+**Important:** This extension does not solve the ODE.
+
+## Current and older versions
+
+Compatibility table
+
+|  Inkscape        |  slopeField | inkscapeMadeEasy | Receive updates?|
+|------------------|-----------------|------------------|-----------------|
+|       1.0        | 1.0 (latest)    |   1.0 (latest)   | YES             |
+| 0.48, 0.91, 0.92 | 0.9x (obsolete) |  0.9x (obsolete) | NO              |
+
+
+**Latest version:** The latest version of **slopeField** is **1.0**. This version is compatible with Inkscape 1.0 and up only. It is **incompatible** with older Inkscape versions!
+
+**Older versions:** If you have an older version of Inkscape, please use the files under the folder **0.9x** on Github.
+
+**Important: Only the latest version will receive updates, new features, and bug fixes! The usage section in this documentation describes the latest version. In older versions, the disposition of the elements in the plugin's screen might be different. Some features might not be present or have different behavior.**
 
 # Installation and requirements
 
-This extension was partially developed in Inkscape 0.48 and partially in 0.91 in Linux (Kubuntu 12.04 and 14.04).
-It should work on both versions of Inkscape. Also, they should work in different OSs too as long as all requirements are installed.
+Installation procedures for latest and older versions are described below.
 
-This extension requires another extension to run, inkscapeMadeEasy <https://github.com/fsmMLK/inkscapeMadeEasy>,
-which contains several backstage methods and classes.
+## Requirements (all versions)
 
-In order to use inkscapeSlopeField extension, you must also download inkscapeMadeEasy files and put them inside Inkscape's
- extension directory. Please refer to inkscapeMadeEasy installation instructions. In the end you must have the following files and directories in your Inkscape extension directory.
+- You will need [inkscapeMadeEasy](https://github.com/fsmMLK/inkscapeMadeEasy) plugin installed. Check the compatibility table above to know the version you need.
 
-```
-inkscape/extensions/
-            |-- inkscapeMadeEasy_Base.py
-            |-- inkscapeMadeEasy_Draw.py
-            |-- inkscapeMadeEasy_Plot.py
-            |-- textextLib
-            |   |-- __init__.py
-            |   |-- basicLatexPackages.tex
-            |   |-- textext.inx
-            |   |-- textext.py
-            |
-            |-- slopeField.py
-            `-- slopeField.inx
-```
+## Installation procedure (v1.0 only)
 
-**Disabling LaTeX support of inkscapeMadeEasy**
+**slopeField** was developed using Inkscape 1.0 in Linux (Kubuntu 18.04). It should work in different OSs too as long as all requirements are met.
 
-Many of the methods implemented in inkscapeMadeEasy project use LaTeX to generate text. To this end I decided to employ the excellent extension **textext** from Pauli Virtanen  <https://pav.iki.fi/software/textext/>. 
+1. Install [inkscapeMadeEasy](https://github.com/fsmMLK/inkscapeMadeEasy), **version 1.0** (latest). Follow the instructions in the manual page. **Note:** LaTeX text is used in **slopeField** if the support is activated (nicer results), otherwise regular text elements will be used.
 
-LaTeX support via textext extension requires LaTeX typesetting system in your computer (it's free and awesome! =] ).
+2. **slopeField** installation
 
-Since many people don't use LaTeX and/or don't have it installed, inkscapeMadeEasy's LaTeX support is now optional. **By default, LaTeX support is ENABLED.**
+    1. Go to Inkscape's extension directory with a file browser. Your inkscape extension directory can be accessed by opening Inkscape and selecting ``Edit > Preferences > System``. Look for the item **User Extensions**  field. There is a button on the right of the field  that will open a file explorer window in that specific folder.
 
-Please refer to <https://fsmmlk.github.io/inkscapeMadeEasy/#installation-and-requirements> on how to easily disable LaTeX support.
+    2. Create a subfolder in the extension directory with the name ``slopeField``. **Important:**  Be careful with upper and lower case letters. You must write as presented above.
 
+    3. Download **slopeField** files and place them inside the directory you just created.
+
+       You don't have to copy all files from Github. The files you will need are inside the ``latest`` folder. In the end you must have the following files and directories in your Inkscape extension directory.
+
+       **LaTeX users:** You can add macros to ``inkscapeMadeEasy/basicLatexPackages.tex``. In this case the same macros will be accessible by all plugins that employ inkscapeMadeEasy.
+
+        ```
+        inkscape
+         ┣━━extensions
+         ┋   ┣━━ inkscapeMadeEasy      <-- inkscapeMadeEasy folder
+             ┃    ┣━━ inkscapeMadeEasy_Base.py
+             ┃    ┣━━ inkscapeMadeEasy_Draw.py
+             ┃    ┣━━ inkscapeMadeEasy_Plot.py
+             ┃    ┗━━ basicLatexPackages.tex
+             ┃
+             ┣━━ textext               <-- texText folder (if you installed textText)
+             ┃    ┋
+             ┃
+             ┣━━ slopeField            <-- slopeField folder
+             ┋    ┣━━ slopeField.inx
+                  ┗━━ slopeField.py
+        
+        NOTE: You might have other sub folders inside the extensions directory. They don't interfere with the plugin.
+        ```
+
+## Installation procedure (v0.9x only)
+
+**slopeField** was developed using Inkscape 0.48 and 0.91 in Linux (Kubuntu 18.04). It should work in different OSs too as long as all requirements are met.
+
+1. Install [inkscapeMadeEasy](https://github.com/fsmMLK/inkscapeMadeEasy), **version 1.0** (latest). Follow the instructions in the manual page. **Note:** LaTeX text is used in **slopeField** if the support is activated (nicer results), otherwise regular text elements will be used.
+
+2. **slopeField** installation
+
+    1. Go to Inkscape's extension directory with a file browser.
+
+    2. Download **slopeField** files and place them inside the directory you just created.
+
+       You don't have to copy all files from Github. The files you will need are inside the ``0.9x`` folder. In the end you must have the following files and directories in your Inkscape extension directory.
+
+        ```
+        inkscape
+         ┣━━ extensions
+         ┋    ┣━━ inkscapeMadeEasy_Base.py
+              ┣━━ inkscapeMadeEasy_Draw.py
+              ┣━━ inkscapeMadeEasy_Plot.py
+              ┃
+              ┣━━ textextLib
+              ┃    ┣━━ __init__.py
+              ┃    ┣━━ basicLatexPackages.tex
+              ┃    ┣━━ textext.inx
+              ┃    ┗━━ textext.py
+              ┃
+              ┣━━ slopeField.inx        <--   from repository folder 0.9x!
+              ┗━━ slopeField.py         <--
+        ```
 
 # Usage
 
 The extension can be found under `extensions > fsmMLK > Plot 2D > Cartesian` menu.
 
-This extension is presented in three tabs, **Slope function data**,  **Axes configuration** and **Segment config
-**. The first is used to
- define the slope field equation and ranges. The second is used to configure the axes and the third is used to configure
-  the slope segment indications.
+This extension is presented in two tabs, **Function definition** and **Conf**. The first is used to
+ define the slope field equation, ranges, and segments configuration. The second is used to configure the axes
 
-### The slope function data tab
+## Function Definition tab
 
-<img src="docs/images/Tab_slopeData.png" width="600px"/>
+<img src="docs/images/Tab_slopeData.png" width="450px"/>
 
-Here you specify the slope function and set both independent and dependent variable ranges.
+Here you specify the slope function, set both independent and dependent variable ranges and adjust the density and size of the segments.
 
 **dy/dx:** Slope function equation. This must be a python compatible expression. Your independent variable **MUST
 ** be `x` and dependent variable **MUST** be `y`.
@@ -77,74 +133,82 @@ The slope equation `f(x,y)` can be found isolating dy/dx in the ODE like the exa
 
 > Example: to generate a sine function, just type `sin(x)`. You don't have to type `math.sin(x)`
 
-**X/Y min and max:** Set the limits of the X and Y axes.
- 
-**General aspect factor:** General aspect ratio between line widths and text width. I designed this extension to have an overall aspect ratio that looked nice to my eyes. It is a function of X and Y tick lengths. With this control you can scale both line widths and text height to fit your needs.
+**X/Y limits:** Set the range of the independent (X) and dependent (Y) variables. On the side there are fields for the lower and upper limits.
+
+### Segment config section
+
+**Number of segments:** Set the number of points where the slope is sampled in each axis. The samples will
+ be equally spaced in the ranges.
+
+**Segment aspect factor:** Aspect ratio parameter for adjusting the width of the slope segments only. Keep in mind
+ that the `General aspect factor` parameter also affects the width of the segments.
+
+**Segment color:** Controls the color of the segments that compose the slope field.
+
+  - You can select the predefined colors. They are presented below
+
+<img src="docs/images/Default_colors.png" width="300px"/>
+
+  
+  - You can select **use color picker** to choose the color from the color picker widget just to the right of the drop down menu. **Attention:** the color selected in the color picker widget will be considered **ONLY** if you select **use color picker** in the drop down menu. 
+
+
+## Conf tab
+
+<img src="docs/images/Tab_AxesConfig.png" width="450px"/>
+
+**General aspect factor:** General aspect ratio between line widths and text height. I designed this extension to have an overall aspect ratio that "looks nice". It is a function of X and Y tick lengths. With this control you can scale both line width and text height. The defauls value is 1.0.
 
 <img src="docs/images/generalAspectRatio.png" width="700px"/>
 
-### The Axes Configuration tab
+### Axes section
 
-<img src="docs/images/Tab_AxesConfig.png" width="600px"/>
+In this section you can control X and Y axes. They act on the axes the same way.
 
-**X/Y axis label:** label of the axes. This string must be LaTeX compatible. Any LaTeX commands or environments are valid. If you want to write in mathematical environment, enclose your text with $...$. You don't have to escape any backslashes.
 
-> Tip: Since `siunitx` package is included in basicLatexPackages.tex file by default in inkscapeMadeEasy, you can use any unit command available there 
 
-Ex: `Foobar $\sqrt{x^2}$ so fancy! (\si{\newton\per\squaremetre})`
+**Label:** label of the axes. If LaTeX support is activated and you want to write in mathematical environment, enclose your text with $...$.
+
+> Tip: Since `siunitx` package is included in inkscapeMadeEasy's basicLatexPackages.tex, you can use any unit command available there too!
+
+> Ex: `Foobar $\sqrt{x^2}$ so fancy! (\si{\newton\per\squaremetre})`
 
 <img src="docs/images/Legend_01.png" width="400px"/>
 
-**Add grid to X/Y axis:** Draw grid lines in X or Y axes. The grid lines will be placed at each tick mark
 
-**Add ticks to X/Y axis:** Draw tick marks with associated values in X or Y axes.
+**Add grid:** Draw grid lines. The grid lines will be placed at the tick marks.
 
-**X/Y tick step:** Tick marks interval  in units of your chart.
+**Add ticks:** Draw tick marks with associated values. 
+
+**Tick step:** Tick mark interval, in units of your chart.
 
 Ex: limits from -1 to 1, with tick step of 0.5 will produce ticks at -1, -0.5, 0, 0.5, 1
 
-> Note: The ticks will radiate from the origin x=0 or y=0 unless the origin does not lie within the limits. In such cases, the ticks will radiate starting from the  limit closest to the origin.
+> Note: The ticks will radiate from the origin (x=0 or y=0) unless the origin does not lie within the limits. In such cases, the ticks will radiate starting from the limit closest to the origin. See image below.
 >
-> Examples in x direction. The same rules apply to Y direction
+> Examples in x direction: (The same rules apply to Y direction)
 >
-> <img src="docs/images/TickStep.png" width="600px"/>
+> <img src="docs/images/TickStep.png" width="500px"/>
 
 
-**X/Y tick length** The distance between the tick marks, in px.
+**Tick length** The distance between tick marks, in units of your canvas. See image below.
 
-<img src="docs/images/TickLength.png" width="350px"/>
+<img src="docs/images/TickLength.png" width="250px"/>
 
-**X/Y tick suffix value:** Optional extra suffix to be added to the tick values. You can use any LaTeX text/commands valid in mathematical environment $...$. You don't have to enclose your text between $...$. You don't have to escape any backslashes.
+**Tick suffix:** Optional extra suffix to be added to tick text. **LaTeX support enabled**: You can use any LaTeX text/commands valid in mathematical environment. You don't have to enclose your text between $...$.
 
-<img src="docs/images/TickSuffix.png" width="800px"/>
+**Atention**: the values appended to tick mark text will NOT affect input/output limits!
 
-
-### The segment config tab
-
-<img src="docs/images/Tab_segments.png" width="600px"/>
-
-
-**Number of segments along X/Y:** Set the number of points where the slope is sampled in each axis. The samples will
- be equally sampled along the range in each axis.
-
-**Segment aspect factor:** Extra aspect ratio parameter for adjusting the width of the slope segments only. Keep in mind
- that the `General aspect factor` parameter also affects the width of the segments.
-
-**Color:** Color of the segments. You can select of the predefined colors as presented below, or select select 
-**use color picker** to choose the color from the color picker widget just below the `Color` drop down menu.
- **Attention:** the color selected in the color picker widget will be considered **ONLY** if you select **use color
-  picker** in the drop down menu.
-
-<img src="docs/images/Default_colors.png" width="250px"/>
+<img src="docs/images/TickSuffix.png" width="60px"/> 
 
 # Observations
 
  - The axes will be placed crossing the origin (0,0) or crossing the coordinate (x,y) closest to the origin if the origin does not lies within the limits.
- - The axes will be created at the center of your screen.
+ - The axes will be created in the center of your screen.
 
 # Special functions
 
-Together with the extension I also predefined 3 new functions:
+Together with the extension, I also predefined 3 new functions:
 
  - **Heaviside step function**
 
@@ -169,8 +233,5 @@ Calling: `squareWave(x,amplitude=1.0,offset=0,period=1.0,delay=0.0)`
 > Tip: You can define your own functions at the beginning of the file `cartesianPlotFunction2D.py`
 
 
-# Examples
-
-<img src="docs/images/Examples.png" width="900px"/>
 
 

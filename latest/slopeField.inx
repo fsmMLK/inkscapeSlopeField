@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <name>Plot Slope Field</name>
+    <id>fernando.slopeField</id>
+    <dependency type="executable" location="inx">slopeField.py</dependency>
+    <dependency type="executable" location="extensions">inkscapeMadeEasy/inkscapeMadeEasy_Base.py</dependency>
+    <dependency type="executable" location="extensions">inkscapeMadeEasy/inkscapeMadeEasy_Draw.py</dependency>
+    <dependency type="executable" location="extensions">inkscapeMadeEasy/inkscapeMadeEasy_Plot.py</dependency>
+    <param name="tab" type="notebook">
+        <page name="Cartesian plot" appearance="minimal" gui-text="Function definition">
+            <hbox>
+                <vbox>
+                    <label appearance="header">Slope equation (python sintax)</label>
+                    <label>Use x as independent and y as dependent variables.</label>
+                    <param name="function" type="string" gui-text="dy/dx=">x*x-y*y</param>
+                    <hbox>
+                        <vbox>
+                            <hbox>
+                                <param name="xMin" type="float" min="-100000" max="100000" precision="3" gui-text="X limits:">0</param>
+                                <param name="xMax" type="float" min="-100000" max="100000" precision="3" gui-text="">6</param>
+                            </hbox>
+                            <hbox>
+                                <param name="yMin" type="float" min="-100000" precision="3" max="100000" gui-text="Y limits:">-1</param>
+                                <param name="yMax" type="float" min="-100000" precision="3" max="100000" gui-text="">1</param>
+                            </hbox>
+                        </vbox>
+                    </hbox>
+                           <label appearance="header">Segment config</label>
+                    <hbox>
+                        <param name="nSegmentsX" type="int" min="2" max="100" gui-text="Number of segments  X:">10</param>
+                        <param name="nSegmentsY" type="int" min="2" max="100" gui-text="Y:">10</param>
+                    </hbox>
+                    <param name="segmentAspectFactor" type="float" precision="2" min="0.01" max="100" gui-text="Segment aspect factor (default: 1.0)">1</param>
+                    <hbox>
+                        <param name="slopeColor" type="optiongroup" appearance="combo" gui-text="Segment color:">
+                            <option value="#B4B4B4">gray</option>
+                            <option value="picker">use color picker --> </option>
+                            <option value="black">black</option>
+                            <option value="red">red</option>
+                            <option value="blue">blue</option>
+                            <option value="yellow">yellow</option>
+                            <option value="green">green</option>
+                            <option value="magen">magenta</option>
+                            <option value="white">white</option>
+                            <option value="Lred">Lred</option>
+                            <option value="Lblue">Lblue</option>
+                            <option value="Lyellow">Lyellow</option>
+                            <option value="Lgreen">Lgreen</option>
+                            <option value="Lmagen">Lmagenta</option>
+                            <option value="Dred">Dred</option>
+                            <option value="Dblue">Dblue</option>
+                            <option value="Dyellow">Dyellow</option>
+                            <option value="Dgreen">Dgreen</option>
+                            <option value="Dmagen">Dmagenta</option>
+                        </param>
+                        <param name="slopeColorPicker" type="color" appearance="colorbutton" gui-text=""/>
+                    </hbox>
+                </vbox>
+            </hbox>
+        </page>
+        <page name="Axes configuration" appearance="minimal" gui-text="Conf">
+            <hbox>
+                <vbox>
+                    <param name="generalAspectFactor" type="float" precision="2" min="0.01" max="100" gui-text="General aspect factor (default: 1.0)">1</param>
+                    <label appearance="header">Axes</label>
+                    <param name="subtab_axis" type="notebook">
+                        <page name="Xaxis" appearance="minimal" gui-text="X axis">
+                            <param name="xLabel" type="string" gui-text="Label:">$x$</param>
+                            <hbox>
+                                <vbox>
+                                    <param name="xGrid" type="bool" gui-text="Add grid">true</param>
+                                    <param name="xTicks" type="bool" gui-text="Add ticks">true</param>
+                                </vbox>
+                                <spacer/>
+                                <separator/>
+                                <spacer/>
+                                <vbox>
+                                    <param name="xTickStep" type="float" min="0" precision="2" max="1000" gui-text="Tick step:">1</param>
+                                    <param name="xScale" type="float" min="-1000" precision="2" max="1000" gui-text="Tick length">50</param>
+                                    <param name="xExtraText" type="string" gui-text="Tick sufix¹:"></param>
+                                </vbox>
+                            </hbox>
+                        </page>
+                        <page name="Yaxis" appearance="minimal" gui-text="Y axis">
+                            <param name="yLabel" type="string" gui-text="Label:">$y(x)$</param>
+                            <hbox>
+                                <vbox>
+                                    <param name="yGrid" type="bool" gui-text="Add grid">true</param>
+                                    <param name="yTicks" type="bool" gui-text="Add ticks">true</param>
+                                </vbox>
+                                <spacer/>
+                                <separator/>
+                                <spacer/>
+                                <vbox>
+                                    <param name="yTickStep" type="float" min="0" precision="2" max="1000" gui-text="Tick step:">1</param>
+                                    <param name="yScale" type="float" min="-1000" precision="2" max="1000" gui-text="Tick length:">50</param>
+                                    <param name="yExtraText" type="string" gui-text="Tick sufix¹:"></param>
+                                </vbox>
+                            </hbox>
+                        </page>
+                    </param>
+                </vbox>
+            </hbox>
+            <label>¹ LaTeX: text will be in inline math mode $...$.</label>
+        </page>
+        <page name="Help" gui-text="Help">
+            <label>For details please refer to</label>
+            <label appearance="url">https://github.com/fsmMLK/inkscapeSlopeField</label>
+        </page>
+    </param>
+    <effect>
+        <object-type>all</object-type>
+        <effects-menu>
+            <submenu name="fsmMLK">
+                <submenu name="Plot 2D">
+                    <submenu name="Cartesian"/>
+                </submenu>
+            </submenu>
+        </effects-menu>
+    </effect>
+    <script>
+        <command location="inx" interpreter="python">slopeField.py</command>
+    </script>
+</inkscape-extension>
