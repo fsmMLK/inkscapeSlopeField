@@ -17,11 +17,11 @@
                         <vbox>
                             <hbox>
                                 <param name="xMin" type="float" min="-100000" max="100000" precision="3" gui-text="X limits:">0</param>
-                                <param name="xMax" type="float" min="-100000" max="100000" precision="3" gui-text="">6</param>
+                                <param name="xMax" type="float" min="-100000" max="100000" precision="3" gui-text=" ">6</param>
                             </hbox>
                             <hbox>
                                 <param name="yMin" type="float" min="-100000" precision="3" max="100000" gui-text="Y limits:">-1</param>
-                                <param name="yMax" type="float" min="-100000" precision="3" max="100000" gui-text="">1</param>
+                                <param name="yMax" type="float" min="-100000" precision="3" max="100000" gui-text=" ">1</param>
                             </hbox>
                         </vbox>
                     </hbox>
@@ -53,7 +53,7 @@
                             <option value="Dgreen">Dgreen</option>
                             <option value="Dmagen">Dmagenta</option>
                         </param>
-                        <param name="slopeColorPicker" type="color" appearance="colorbutton" gui-text=""/>
+                        <param name="slopeColorPicker" type="color" appearance="colorbutton" gui-text=" "/>
                     </hbox>
                 </vbox>
             </hbox>
