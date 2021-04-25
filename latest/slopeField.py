@@ -72,7 +72,7 @@ class PlotSlopeField(inkBase.inkscapeMadeEasy):
         position[0] = int(ceil(position[0] / 10.0)) * 10
         position[1] = int(ceil(position[1] / 10.0)) * 10
 
-        [self.slopeColor, alpha] = inkDraw.color.parseColorPicker(so.slopeColor, so.slopeColorPicker)
+        self.slopeColor = inkDraw.color.parseColorPicker(so.slopeColor, so.slopeColorPicker)
 
         # root_layer = self.current_layer
         root_layer = self.document.getroot()
