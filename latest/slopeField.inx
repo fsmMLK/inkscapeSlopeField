@@ -33,7 +33,7 @@
                     <param name="segmentAspectFactor" type="float" precision="2" min="0.01" max="100" gui-text="Segment aspect factor (default: 1.0)">1</param>
                     <hbox>
                         <param name="slopeColor" type="optiongroup" appearance="combo" gui-text="Segment color:">
-                            <option value="#B4B4B4">gray</option>
+                            <option value="#B4B4B4FF">gray</option>
                             <option value="picker">use color picker --> </option>
                             <option value="black">black</option>
                             <option value="red">red</option>
